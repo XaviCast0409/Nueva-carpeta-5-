@@ -3,44 +3,44 @@ import React, { useState, useEffect } from 'react';
 // Aquí están configuradas las 10 puertas con sus códigos y pistas (Nivel 6to Primaria)
 const PUERTAS_DATA = {
   1: {
-    codigo: "7",
-    pista: "Anomalía 01: El fallo de tipeo se esconde bajo las teclas de control en la primera fila."
+    codigo: "10",
+    pista: "Época 01: El primer salto temporal te lleva a la primera fila. Busca bajo las teclas de los operadores."
   },
   2: {
-    codigo: "1080",
-    pista: "Anomalía 02: Revisa la parte posterior del portal visual (monitor) en la segunda escuadra."
+    codigo: "48",
+    pista: "Época 02: En la segunda era, el secreto se oculta detrás de la ventana de cristal (el monitor principal)."
   },
   3: {
-    codigo: "255",
-    pista: "Anomalía 03: El bloque de memoria física (armario) tiene un archivo corrupto en sus repisas interiores."
+    codigo: "57",
+    pista: "Época 03: Dirígete a la bóveda de artefactos antiguos (el armario del aula). Busca en uno de los estantes."
   },
   4: {
-    codigo: "27",
-    pista: "Anomalía 04: Detectamos un error de fricción bajo la alfombrilla del ratón en la tercera órbita."
+    codigo: "400",
+    pista: "Época 04: En la tercera línea temporal, levanta la alfombra de fricción donde viaja el ratón óptico."
   },
   5: {
-    codigo: "10",
-    pista: "Anomalía 05: El trono del Administrador (silla del profesor) alberga un código de reinicio en su base."
+    codigo: "2000",
+    pista: "Época 05: El Guardián del Tiempo te vigila. Inspecciona la base con ruedas de su trono (la silla)."
   },
   6: {
-    codigo: "55",
-    pista: "Anomalía 06: La torre de procesamiento (CPU) de la cuarta fila expulsa secretos por su rejilla de ventilación."
+    codigo: "120",
+    pista: "Época 06: La máquina central de la cuarta fila (CPU) expulsa calor al procesar los años. Busca en su rejilla."
   },
   7: {
-    codigo: "26",
-    pista: "Anomalía 07: Un fragmento de código quedó atrapado en el estrecho vacío entre dos monitores que se tocan."
+    codigo: "75",
+    pista: "Época 07: Se ha formado una fisura temporal en el centro de la sala, justo en el estrecho espacio entre dos pantallas."
   },
   8: {
-    codigo: "400",
-    pista: "Anomalía 08: Sumérgete bajo el escritorio central del Host. El parche de seguridad está adherido a la madera."
+    codigo: "20",
+    pista: "Época 08: Agáchate bajo la mesa de control del Guardián Principal (el escritorio). La pista te espera en la sombra."
   },
   9: {
-    codigo: "44",
-    pista: "Anomalía 09: El firewall físico ha sido comprometido. Mira en lo más alto del marco de la puerta de entrada."
+    codigo: "10",
+    pista: "Época 09: Examina el portal físico que divide nuestra dimensión del pasillo. Busca en lo más alto de su marco."
   },
   10: {
-    codigo: "49",
-    pista: "Anomalía 10: Un dispositivo señalador inactivo (mouse de repuesto) guarda la última clave de restauración."
+    codigo: "37",
+    pista: "Época 10: Un dispositivo de movimiento (mouse) ha quedado congelado en el tiempo. Búscalo cerca del escritorio."
   }
 };
 
