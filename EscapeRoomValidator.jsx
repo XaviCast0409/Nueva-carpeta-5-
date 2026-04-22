@@ -3,47 +3,46 @@ import React, { useState, useEffect } from 'react';
 // Aquí están configuradas las 10 puertas con sus códigos y pistas (Nivel 6to Primaria)
 const PUERTAS_DATA = {
   1: {
-    codigo: "36",
-    pista: "Misión Alfa: El teclado de la primera fila oculta un secreto bajo sus teclas. Inicia la búsqueda de infiltración."
+    codigo: "7",
+    pista: "Caso 01: Revisa bajo las teclas de los operadores en la primera línea de investigación."
   },
   2: {
-    codigo: "20",
-    pista: "Misión Beta: La segunda fila tiene un portal oscuro. Mira detrás del monitor de la computadora central."
+    codigo: "9",
+    pista: "Caso 02: El código malicioso dejó un rastro detrás de la pantalla central de la segunda fila."
   },
   3: {
-    codigo: "70",
-    pista: "Misión Gamma: Ingresa al depósito de hardware (el armario). El código aguarda en uno de los estantes."
+    codigo: "300",
+    pista: "Caso 03: Inspecciona la bóveda de hardware (el armario). La pista está resguardada en sus repisas."
   },
   4: {
-    codigo: "200",
-    pista: "Misión Delta: En la tercera línea de defensa, busca el archivo físico debajo de la almohadilla del ratón."
+    codigo: "130",
+    pista: "Caso 04: Levanta la alfombra de fricción del ratón (mousepad) en la tercera fila."
   },
   5: {
-    codigo: "16",
-    pista: "Misión Épsilon: La silla del Administrador Principal guarda un dato encriptado en su estructura inferior."
+    codigo: "8",
+    pista: "Caso 05: El asiento móvil del Inspector Jefe oculta evidencia en su base con ruedas."
   },
   6: {
-    codigo: "6",
-    pista: "Misión Zeta: Inspecciona el lateral del CPU en la cuarta fila, justo donde el aire caliente del sistema escapa."
+    codigo: "56",
+    pista: "Caso 06: Busca en el sistema de ventilación de la torre de datos (CPU) en la última línea del laboratorio."
   },
   7: {
-    codigo: "112",
-    pista: "Misión Eta: Entre el espacio ciego de dos pantallas conectadas en el centro de la sala, ahí yace tu objetivo."
+    codigo: "75",
+    pista: "Caso 07: Hay un archivo clasificado atrapado en la unión cega de dos pantallas conjuntas en el centro."
   },
   8: {
-    codigo: "80",
-    pista: "Misión Theta: Sumérgete bajo la mesa principal del aula, donde el Host procesa toda la red."
+    codigo: "200",
+    pista: "Caso 08: Agáchate bajo el buró principal de operaciones. La evidencia está adherida a la madera."
   },
   9: {
-    codigo: "15",
-    pista: "Misión Iota: El umbral de entrada al sistema físico. Eleva la vista hacia la cima del marco de la puerta."
+    codigo: "240",
+    pista: "Caso 09: Revisa la frontera física del laboratorio. Observa el dintel superior de la compuerta de ingreso."
   },
   10: {
-    codigo: "3",
-    pista: "Misión Kappa: Cerca del periférico de repuesto (mouse extra) que yace inactivo en el escritorio."
+    codigo: "36",
+    pista: "Caso 10: Un periférico ha sido desconectado de la red. Búscalo cerca del ratón de repuesto inactivo."
   }
 };
-
 export default function EscapeRoomTerminal() {
   const [ordenPuertas, setOrdenPuertas] = useState([]);
   const [indiceActual, setIndiceActual] = useState(0);
