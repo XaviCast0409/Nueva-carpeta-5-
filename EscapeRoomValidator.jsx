@@ -4,43 +4,43 @@ import React, { useState, useEffect } from 'react';
 const PUERTAS_DATA = {
   1: {
     codigo: "7",
-    pista: "Pergamino 01: El primer camino se oculta bajo las teclas del aprendiz en la primera línea de combate."
+    pista: "Tesoro 01: El primer mapa está bajo las teclas de mando en la primera fila de la tripulación."
   },
   2: {
-    codigo: "75",
-    pista: "Pergamino 02: Vigila tu retaguardia. El secreto yace a espaldas del cristal emisor (monitor) en la segunda escuadra."
+    codigo: "30",
+    pista: "Tesoro 02: Revisa a espaldas del cristal vigía (el monitor principal) en la segunda escuadra."
   },
   3: {
-    codigo: "32",
-    pista: "Pergamino 03: Infiltra la bóveda de armamento (el armario). Encontrarás tu objetivo en los estantes."
+    codigo: "5",
+    pista: "Tesoro 03: Saquea la gran bodega de suministros (el armario). El botín descansa en un estante."
   },
   4: {
-    codigo: "400",
-    pista: "Pergamino 04: Levanta la alfombra de fricción donde el roedor electrónico se desliza en la tercera fila."
+    codigo: "16",
+    pista: "Tesoro 04: Levanta la alfombra de fricción donde el ratón de cubierta resbala en la tercera fila."
   },
   5: {
-    codigo: "30",
-    pista: "Pergamino 05: El trono del Shogun (el profesor) oculta un artefacto en su base móvil."
+    codigo: "9",
+    pista: "Tesoro 05: El trono del Capitán (silla del profesor) oculta un secreto en su base móvil."
   },
   6: {
-    codigo: "1440",
-    pista: "Pergamino 06: La torre de poder (CPU) de la cuarta fila exhala el calor de la batalla. Busca en su rejilla."
+    codigo: "50",
+    pista: "Tesoro 06: El motor del barco (CPU) de la cuarta fila exhala calor. Busca en su rejilla de babor."
   },
   7: {
-    codigo: "90",
-    pista: "Pergamino 07: Un mensaje cifrado quedó atrapado en el desfiladero entre dos pantallas gemelas."
+    codigo: "27",
+    pista: "Tesoro 07: Un mensaje en una botella quedó atrapado en el desfiladero entre dos pantallas gemelas."
   },
   8: {
-    codigo: "45",
-    pista: "Pergamino 08: Sumérgete en las sombras bajo la gran mesa de comando del Shogun (escritorio principal)."
+    codigo: "13",
+    pista: "Tesoro 08: Sumérgete en las aguas profundas bajo la gran mesa de comando del Capitán."
   },
   9: {
-    codigo: "26",
-    pista: "Pergamino 09: Inspecciona la frontera de nuestro dojo. Mira en lo más alto de la compuerta de acceso."
+    codigo: "54",
+    pista: "Tesoro 09: Inspecciona la frontera de nuestro barco. Mira en lo más alto de la escotilla de entrada."
   },
   10: {
-    codigo: "95",
-    pista: "Pergamino 10: Un periférico caído en combate (mouse inactivo de repuesto) guarda el honor final."
+    codigo: "36",
+    pista: "Tesoro 10: Un roedor petrificado (mouse inactivo de repuesto) guarda la última pieza del oro."
   }
 };
 
