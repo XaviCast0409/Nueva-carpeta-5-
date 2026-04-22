@@ -3,44 +3,44 @@ import React, { useState, useEffect } from 'react';
 // Aquí están configuradas las 10 puertas con sus códigos y pistas (Nivel 6to Primaria)
 const PUERTAS_DATA = {
   1: {
-    codigo: "10",
-    pista: "Fórmula 01: El primer ingrediente está oculto bajo el tablero de runas (teclado) del aprendiz en la primera fila."
+    codigo: "7",
+    pista: "Pergamino 01: El primer camino se oculta bajo las teclas del aprendiz en la primera línea de combate."
   },
   2: {
-    codigo: "108",
-    pista: "Fórmula 02: Mira el reverso del espejo oscuro (monitor) en la segunda línea de invocación."
+    codigo: "75",
+    pista: "Pergamino 02: Vigila tu retaguardia. El secreto yace a espaldas del cristal emisor (monitor) en la segunda escuadra."
   },
   3: {
-    codigo: "50",
-    pista: "Fórmula 03: La gran bóveda de ingredientes (el armario) oculta un pergamino en una de sus repisas."
+    codigo: "32",
+    pista: "Pergamino 03: Infiltra la bóveda de armamento (el armario). Encontrarás tu objetivo en los estantes."
   },
   4: {
-    codigo: "180",
-    pista: "Fórmula 04: Levanta la base de fricción donde descansa el ratón en la tercera fila del laboratorio."
+    codigo: "400",
+    pista: "Pergamino 04: Levanta la alfombra de fricción donde el roedor electrónico se desliza en la tercera fila."
   },
   5: {
-    codigo: "9",
-    pista: "Fórmula 05: El Gran Maestro oculta un secreto vital en la base con ruedas de su trono (la silla)."
+    codigo: "30",
+    pista: "Pergamino 05: El trono del Shogun (el profesor) oculta un artefacto en su base móvil."
   },
   6: {
-    codigo: "28",
-    pista: "Fórmula 06: El caldero de procesamiento (CPU) de la cuarta fila expulsa calor mágico. Busca en su rejilla."
+    codigo: "1440",
+    pista: "Pergamino 06: La torre de poder (CPU) de la cuarta fila exhala el calor de la batalla. Busca en su rejilla."
   },
   7: {
-    codigo: "15",
-    pista: "Fórmula 07: Un cristal quedó atrapado en el estrecho vacío entre dos espejos (monitores) que se tocan."
+    codigo: "90",
+    pista: "Pergamino 07: Un mensaje cifrado quedó atrapado en el desfiladero entre dos pantallas gemelas."
   },
   8: {
-    codigo: "500",
-    pista: "Fórmula 08: Sumérgete bajo el altar principal del Maestro (el escritorio central). La pista está adherida abajo."
+    codigo: "45",
+    pista: "Pergamino 08: Sumérgete en las sombras bajo la gran mesa de comando del Shogun (escritorio principal)."
   },
   9: {
-    codigo: "40",
-    pista: "Fórmula 09: Revisa el dintel superior del gran portal físico de entrada a nuestra cámara de alquimia."
+    codigo: "26",
+    pista: "Pergamino 09: Inspecciona la frontera de nuestro dojo. Mira en lo más alto de la compuerta de acceso."
   },
   10: {
-    codigo: "63",
-    pista: "Fórmula 10: Un roedor petrificado (mouse inactivo de repuesto) guarda la última piedra en la mesa principal."
+    codigo: "95",
+    pista: "Pergamino 10: Un periférico caído en combate (mouse inactivo de repuesto) guarda el honor final."
   }
 };
 
