@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 
 // Aquí están configuradas las 10 puertas con sus códigos y pistas (Nivel 6to Primaria)
 const PUERTAS_DATA = {
-  1: { codigo: "20", pista: "Fallo 01: El primer parche está oculto bajo las teclas de la primera línea." },
-  2: { codigo: "42", pista: "Fallo 02: Mira el reverso de la pantalla de código (monitor) en la segunda escuadra." },
-  3: { codigo: "10", pista: "Fallo 03: La bóveda de servidores físicos (el armario) oculta un disco en sus estantes." },
-  4: { codigo: "50", pista: "Fallo 04: Levanta la plataforma donde el roedor electrónico resbala en la tercera fila." },
-  5: { codigo: "9", pista: "Fallo 05: El Arquitecto del Sistema esconde un script en la base de su trono rodante." },
-  6: { codigo: "27", pista: "Fallo 06: La torre de procesamiento (CPU) de la cuarta fila transpira datos. Busca en su rejilla." },
-  7: { codigo: "60", pista: "Fallo 07: Un bug quedó atrapado en el desfiladero ciego entre dos pantallas unidas." },
-  8: { codigo: "6", pista: "Fallo 08: Desciende bajo la mesa central del Arquitecto. El firewall está pegado ahí." },
-  9: { codigo: "16", pista: "Fallo 09: Inspecciona la frontera de nuestra simulación. Mira en lo alto de la puerta de ingreso." },
-  10: { codigo: "96", pista: "Fallo 10: Un periférico desconectado de la Matrix (mouse inactivo) esconde la llave." }
+  1: { codigo: "4", pista: "Pieza 01: El engranaje principal yace bajo la consola de tipeo en la primera escuadra." },
+  2: { codigo: "540", pista: "Pieza 02: A espaldas del panel visor principal (monitor) en la segunda fila." },
+  3: { codigo: "8", pista: "Pieza 03: Infiltra el depósito de chatarra (el armario). Encontrarás repuestos en sus repisas." },
+  4: { codigo: "100", pista: "Pieza 04: Revisa bajo la almohadilla de fricción del control direccional (mousepad) en la tercera fila." },
+  5: { codigo: "35", pista: "Pieza 05: El Comandante de Escuadrón oculta una llave en la base de su asiento de mando." },
+  6: { codigo: "12", pista: "Pieza 06: El motor de plasma (CPU) de la cuarta fila necesita enfriarse. Busca cerca de su ventilación." },
+  7: { codigo: "8", pista: "Pieza 07: Una tuerca perdida quedó atascada en la unión física de dos pantallas gemelas." },
+  8: { codigo: "3", pista: "Pieza 08: Deslízate bajo la gran estación de ensamblaje (escritorio del profesor)." },
+  9: { codigo: "7", pista: "Pieza 09: Inspecciona la escotilla de despliegue. Busca en el marco superior de la puerta." },
+  10: { codigo: "125", pista: "Pieza 10: Un controlador secundario apagado (mouse inactivo) guarda los códigos de ignición." }
 };
 
 export default function EscapeRoomTerminal() {
