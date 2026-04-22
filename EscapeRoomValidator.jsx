@@ -4,45 +4,46 @@ import React, { useState, useEffect } from 'react';
 const PUERTAS_DATA = {
   1: {
     codigo: "7",
-    pista: "Caso 01: Revisa bajo las teclas de los operadores en la primera línea de investigación."
+    pista: "Anomalía 01: El fallo de tipeo se esconde bajo las teclas de control en la primera fila."
   },
   2: {
-    codigo: "9",
-    pista: "Caso 02: El código malicioso dejó un rastro detrás de la pantalla central de la segunda fila."
+    codigo: "1080",
+    pista: "Anomalía 02: Revisa la parte posterior del portal visual (monitor) en la segunda escuadra."
   },
   3: {
-    codigo: "300",
-    pista: "Caso 03: Inspecciona la bóveda de hardware (el armario). La pista está resguardada en sus repisas."
+    codigo: "255",
+    pista: "Anomalía 03: El bloque de memoria física (armario) tiene un archivo corrupto en sus repisas interiores."
   },
   4: {
-    codigo: "130",
-    pista: "Caso 04: Levanta la alfombra de fricción del ratón (mousepad) en la tercera fila."
+    codigo: "27",
+    pista: "Anomalía 04: Detectamos un error de fricción bajo la alfombrilla del ratón en la tercera órbita."
   },
   5: {
-    codigo: "8",
-    pista: "Caso 05: El asiento móvil del Inspector Jefe oculta evidencia en su base con ruedas."
+    codigo: "10",
+    pista: "Anomalía 05: El trono del Administrador (silla del profesor) alberga un código de reinicio en su base."
   },
   6: {
-    codigo: "56",
-    pista: "Caso 06: Busca en el sistema de ventilación de la torre de datos (CPU) en la última línea del laboratorio."
+    codigo: "55",
+    pista: "Anomalía 06: La torre de procesamiento (CPU) de la cuarta fila expulsa secretos por su rejilla de ventilación."
   },
   7: {
-    codigo: "75",
-    pista: "Caso 07: Hay un archivo clasificado atrapado en la unión cega de dos pantallas conjuntas en el centro."
+    codigo: "26",
+    pista: "Anomalía 07: Un fragmento de código quedó atrapado en el estrecho vacío entre dos monitores que se tocan."
   },
   8: {
-    codigo: "200",
-    pista: "Caso 08: Agáchate bajo el buró principal de operaciones. La evidencia está adherida a la madera."
+    codigo: "400",
+    pista: "Anomalía 08: Sumérgete bajo el escritorio central del Host. El parche de seguridad está adherido a la madera."
   },
   9: {
-    codigo: "240",
-    pista: "Caso 09: Revisa la frontera física del laboratorio. Observa el dintel superior de la compuerta de ingreso."
+    codigo: "44",
+    pista: "Anomalía 09: El firewall físico ha sido comprometido. Mira en lo más alto del marco de la puerta de entrada."
   },
   10: {
-    codigo: "36",
-    pista: "Caso 10: Un periférico ha sido desconectado de la red. Búscalo cerca del ratón de repuesto inactivo."
+    codigo: "49",
+    pista: "Anomalía 10: Un dispositivo señalador inactivo (mouse de repuesto) guarda la última clave de restauración."
   }
 };
+
 export default function EscapeRoomTerminal() {
   const [ordenPuertas, setOrdenPuertas] = useState([]);
   const [indiceActual, setIndiceActual] = useState(0);
