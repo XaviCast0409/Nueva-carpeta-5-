@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 
 // Aquí están configuradas las 10 puertas con sus códigos y pistas (Nivel 6to Primaria)
 const PUERTAS_DATA = {
-  1: { codigo: "10", pista: "Portal 01: Bajo las teclas de control en la primera fila." },
-  2: { codigo: "10", pista: "Portal 02: A espaldas del cristal emisor (monitor) de la segunda fila." },
-  3: { codigo: "12", pista: "Portal 03: Inspecciona la bóveda de artefactos (el armario). Busca en sus repisas." },
-  4: { codigo: "45", pista: "Portal 04: Levanta la alfombra de fricción del ratón en la tercera fila." },
-  5: { codigo: "16", pista: "Portal 05: El Guía del Multiverso oculta un secreto en la base rodante de su silla." },
-  6: { codigo: "15", pista: "Portal 06: El núcleo del sistema (CPU) de la cuarta fila expulsa calor. Revisa su rejilla." },
-  7: { codigo: "30", pista: "Portal 07: Una fisura temporal quedó atrapada entre dos pantallas gemelas en el centro." },
-  8: { codigo: "4", pista: "Portal 08: Agáchate en las sombras de la gran mesa de comando del Guía Principal." },
-  9: { codigo: "20", pista: "Portal 09: Revisa el dintel superior de la compuerta de acceso a nuestra dimensión." },
-  10: { codigo: "64", pista: "Portal 10: Un dispositivo de puntero congelado (mouse inactivo) guarda el código final." }
+  1: { codigo: "20", pista: "Fallo 01: El primer parche está oculto bajo las teclas de la primera línea." },
+  2: { codigo: "42", pista: "Fallo 02: Mira el reverso de la pantalla de código (monitor) en la segunda escuadra." },
+  3: { codigo: "10", pista: "Fallo 03: La bóveda de servidores físicos (el armario) oculta un disco en sus estantes." },
+  4: { codigo: "50", pista: "Fallo 04: Levanta la plataforma donde el roedor electrónico resbala en la tercera fila." },
+  5: { codigo: "9", pista: "Fallo 05: El Arquitecto del Sistema esconde un script en la base de su trono rodante." },
+  6: { codigo: "27", pista: "Fallo 06: La torre de procesamiento (CPU) de la cuarta fila transpira datos. Busca en su rejilla." },
+  7: { codigo: "60", pista: "Fallo 07: Un bug quedó atrapado en el desfiladero ciego entre dos pantallas unidas." },
+  8: { codigo: "6", pista: "Fallo 08: Desciende bajo la mesa central del Arquitecto. El firewall está pegado ahí." },
+  9: { codigo: "16", pista: "Fallo 09: Inspecciona la frontera de nuestra simulación. Mira en lo alto de la puerta de ingreso." },
+  10: { codigo: "96", pista: "Fallo 10: Un periférico desconectado de la Matrix (mouse inactivo) esconde la llave." }
 };
 
 export default function EscapeRoomTerminal() {
