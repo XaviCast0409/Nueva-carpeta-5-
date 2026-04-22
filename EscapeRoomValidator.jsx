@@ -3,44 +3,44 @@ import React, { useState, useEffect } from 'react';
 // Aquí están configuradas las 10 puertas con sus códigos y pistas (Nivel 6to Primaria)
 const PUERTAS_DATA = {
   1: {
-    codigo: "35",
-    pista: "Misión 1: Busca debajo del tablero negro donde teclean los jugadores de la primera fila."
+    codigo: "36",
+    pista: "Misión Alfa: El teclado de la primera fila oculta un secreto bajo sus teclas. Inicia la búsqueda de infiltración."
   },
   2: {
-    codigo: "58",
-    pista: "Misión 2: Tu siguiente objetivo se oculta a espaldas del monitor principal de la segunda escuadra."
+    codigo: "20",
+    pista: "Misión Beta: La segunda fila tiene un portal oscuro. Mira detrás del monitor de la computadora central."
   },
   3: {
-    codigo: "10",
-    pista: "Misión 3: Dirígete al gran cofre de metal donde descansan los equipos. Busca en el segundo nivel del armario."
+    codigo: "70",
+    pista: "Misión Gamma: Ingresa al depósito de hardware (el armario). El código aguarda en uno de los estantes."
   },
   4: {
-    codigo: "90",
-    pista: "Misión 4: Levanta la alfombra donde el ratón óptico resbala en la tercera fila."
+    codigo: "200",
+    pista: "Misión Delta: En la tercera línea de defensa, busca el archivo físico debajo de la almohadilla del ratón."
   },
   5: {
-    codigo: "140",
-    pista: "Misión 5: El 'Jefe Final' tiene una silla rodante. Inspecciona la base de su trono."
+    codigo: "16",
+    pista: "Misión Épsilon: La silla del Administrador Principal guarda un dato encriptado en su estructura inferior."
   },
   6: {
-    codigo: "240",
-    pista: "Misión 6: La torre que procesa la información en la cuarta fila respira aire caliente. Busca junto a su ventilador."
+    codigo: "6",
+    pista: "Misión Zeta: Inspecciona el lateral del CPU en la cuarta fila, justo donde el aire caliente del sistema escapa."
   },
   7: {
-    codigo: "24",
-    pista: "Misión 7: Un ratón desconectado y olvidado en el escritorio central guarda el séptimo secreto."
+    codigo: "112",
+    pista: "Misión Eta: Entre el espacio ciego de dos pantallas conectadas en el centro de la sala, ahí yace tu objetivo."
   },
   8: {
-    codigo: "162",
-    pista: "Misión 8: En el punto medio de la sala, donde dos pantallas se miran de reojo, encontrarás la clave."
+    codigo: "80",
+    pista: "Misión Theta: Sumérgete bajo la mesa principal del aula, donde el Host procesa toda la red."
   },
   9: {
-    codigo: "36000",
-    pista: "Misión 9: Todo sistema tiene una entrada principal. Busca en lo más alto del marco de la puerta."
+    codigo: "15",
+    pista: "Misión Iota: El umbral de entrada al sistema físico. Eleva la vista hacia la cima del marco de la puerta."
   },
   10: {
-    codigo: "20",
-    pista: "Misión 10: Sumérgete bajo la mesa de control del profesor, el último paquete de datos te espera ahí."
+    codigo: "3",
+    pista: "Misión Kappa: Cerca del periférico de repuesto (mouse extra) que yace inactivo en el escritorio."
   }
 };
 
