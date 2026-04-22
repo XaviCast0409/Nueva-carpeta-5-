@@ -2,46 +2,16 @@ import React, { useState, useEffect } from 'react';
 
 // Aquí están configuradas las 10 puertas con sus códigos y pistas (Nivel 6to Primaria)
 const PUERTAS_DATA = {
-  1: {
-    codigo: "7",
-    pista: "Tesoro 01: El primer mapa está bajo las teclas de mando en la primera fila de la tripulación."
-  },
-  2: {
-    codigo: "30",
-    pista: "Tesoro 02: Revisa a espaldas del cristal vigía (el monitor principal) en la segunda escuadra."
-  },
-  3: {
-    codigo: "5",
-    pista: "Tesoro 03: Saquea la gran bodega de suministros (el armario). El botín descansa en un estante."
-  },
-  4: {
-    codigo: "16",
-    pista: "Tesoro 04: Levanta la alfombra de fricción donde el ratón de cubierta resbala en la tercera fila."
-  },
-  5: {
-    codigo: "9",
-    pista: "Tesoro 05: El trono del Capitán (silla del profesor) oculta un secreto en su base móvil."
-  },
-  6: {
-    codigo: "50",
-    pista: "Tesoro 06: El motor del barco (CPU) de la cuarta fila exhala calor. Busca en su rejilla de babor."
-  },
-  7: {
-    codigo: "27",
-    pista: "Tesoro 07: Un mensaje en una botella quedó atrapado en el desfiladero entre dos pantallas gemelas."
-  },
-  8: {
-    codigo: "13",
-    pista: "Tesoro 08: Sumérgete en las aguas profundas bajo la gran mesa de comando del Capitán."
-  },
-  9: {
-    codigo: "54",
-    pista: "Tesoro 09: Inspecciona la frontera de nuestro barco. Mira en lo más alto de la escotilla de entrada."
-  },
-  10: {
-    codigo: "36",
-    pista: "Tesoro 10: Un roedor petrificado (mouse inactivo de repuesto) guarda la última pieza del oro."
-  }
+  1: { codigo: "10", pista: "Portal 01: Bajo las teclas de control en la primera fila." },
+  2: { codigo: "10", pista: "Portal 02: A espaldas del cristal emisor (monitor) de la segunda fila." },
+  3: { codigo: "12", pista: "Portal 03: Inspecciona la bóveda de artefactos (el armario). Busca en sus repisas." },
+  4: { codigo: "45", pista: "Portal 04: Levanta la alfombra de fricción del ratón en la tercera fila." },
+  5: { codigo: "16", pista: "Portal 05: El Guía del Multiverso oculta un secreto en la base rodante de su silla." },
+  6: { codigo: "15", pista: "Portal 06: El núcleo del sistema (CPU) de la cuarta fila expulsa calor. Revisa su rejilla." },
+  7: { codigo: "30", pista: "Portal 07: Una fisura temporal quedó atrapada entre dos pantallas gemelas en el centro." },
+  8: { codigo: "4", pista: "Portal 08: Agáchate en las sombras de la gran mesa de comando del Guía Principal." },
+  9: { codigo: "20", pista: "Portal 09: Revisa el dintel superior de la compuerta de acceso a nuestra dimensión." },
+  10: { codigo: "64", pista: "Portal 10: Un dispositivo de puntero congelado (mouse inactivo) guarda el código final." }
 };
 
 export default function EscapeRoomTerminal() {
