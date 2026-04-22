@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 
 // Aquí están configuradas las 10 puertas con sus códigos y pistas (Nivel 6to Primaria)
 const PUERTAS_DATA = {
-  1: { codigo: "4", pista: "Pieza 01: El engranaje principal yace bajo la consola de tipeo en la primera escuadra." },
-  2: { codigo: "540", pista: "Pieza 02: A espaldas del panel visor principal (monitor) en la segunda fila." },
-  3: { codigo: "8", pista: "Pieza 03: Infiltra el depósito de chatarra (el armario). Encontrarás repuestos en sus repisas." },
-  4: { codigo: "100", pista: "Pieza 04: Revisa bajo la almohadilla de fricción del control direccional (mousepad) en la tercera fila." },
-  5: { codigo: "35", pista: "Pieza 05: El Comandante de Escuadrón oculta una llave en la base de su asiento de mando." },
-  6: { codigo: "12", pista: "Pieza 06: El motor de plasma (CPU) de la cuarta fila necesita enfriarse. Busca cerca de su ventilación." },
-  7: { codigo: "8", pista: "Pieza 07: Una tuerca perdida quedó atascada en la unión física de dos pantallas gemelas." },
-  8: { codigo: "3", pista: "Pieza 08: Deslízate bajo la gran estación de ensamblaje (escritorio del profesor)." },
-  9: { codigo: "7", pista: "Pieza 09: Inspecciona la escotilla de despliegue. Busca en el marco superior de la puerta." },
-  10: { codigo: "125", pista: "Pieza 10: Un controlador secundario apagado (mouse inactivo) guarda los códigos de ignición." }
+  1: { codigo: "10", pista: "Enigma 01: La primera psicofonía nos guía bajo las teclas del investigador en la primera fila." },
+  2: { codigo: "35", pista: "Enigma 02: Hay una sombra proyectada en el reverso del monitor de la segunda escuadra." },
+  3: { codigo: "12", pista: "Enigma 03: Abre la bóveda de contención (el armario). El ectoplasma brilla en un estante." },
+  4: { codigo: "45", pista: "Enigma 04: Bajo la alfombra de fricción del ratón en la tercera fila hay un rastro fantasmal." },
+  5: { codigo: "7", pista: "Enigma 05: El Investigador Jefe esconde un amuleto protector en las ruedas de su silla." },
+  6: { codigo: "40", pista: "Enigma 06: La máquina generadora (CPU) de la cuarta fila atrae presencias. Revisa su rejilla." },
+  7: { codigo: "10", pista: "Enigma 07: Una entidad quedó atrapada en el estrecho vacío entre dos pantallas conjuntas." },
+  8: { codigo: "10", pista: "Enigma 08: Sumérgete en la oscuridad debajo de la mesa central de investigación." },
+  9: { codigo: "4", pista: "Enigma 09: Revisa el dintel superior del umbral de entrada al laboratorio embrujado." },
+  10: { codigo: "80", pista: "Enigma 10: Un roedor sin vida (mouse inactivo de repuesto) guarda el último sello de contención." }
 };
 
 export default function EscapeRoomTerminal() {
