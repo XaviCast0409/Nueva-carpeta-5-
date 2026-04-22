@@ -4,43 +4,43 @@ import React, { useState, useEffect } from 'react';
 const PUERTAS_DATA = {
   1: {
     codigo: "10",
-    pista: "Época 01: El primer salto temporal te lleva a la primera fila. Busca bajo las teclas de los operadores."
+    pista: "Fórmula 01: El primer ingrediente está oculto bajo el tablero de runas (teclado) del aprendiz en la primera fila."
   },
   2: {
-    codigo: "48",
-    pista: "Época 02: En la segunda era, el secreto se oculta detrás de la ventana de cristal (el monitor principal)."
+    codigo: "108",
+    pista: "Fórmula 02: Mira el reverso del espejo oscuro (monitor) en la segunda línea de invocación."
   },
   3: {
-    codigo: "57",
-    pista: "Época 03: Dirígete a la bóveda de artefactos antiguos (el armario del aula). Busca en uno de los estantes."
+    codigo: "50",
+    pista: "Fórmula 03: La gran bóveda de ingredientes (el armario) oculta un pergamino en una de sus repisas."
   },
   4: {
-    codigo: "400",
-    pista: "Época 04: En la tercera línea temporal, levanta la alfombra de fricción donde viaja el ratón óptico."
+    codigo: "180",
+    pista: "Fórmula 04: Levanta la base de fricción donde descansa el ratón en la tercera fila del laboratorio."
   },
   5: {
-    codigo: "2000",
-    pista: "Época 05: El Guardián del Tiempo te vigila. Inspecciona la base con ruedas de su trono (la silla)."
+    codigo: "9",
+    pista: "Fórmula 05: El Gran Maestro oculta un secreto vital en la base con ruedas de su trono (la silla)."
   },
   6: {
-    codigo: "120",
-    pista: "Época 06: La máquina central de la cuarta fila (CPU) expulsa calor al procesar los años. Busca en su rejilla."
+    codigo: "28",
+    pista: "Fórmula 06: El caldero de procesamiento (CPU) de la cuarta fila expulsa calor mágico. Busca en su rejilla."
   },
   7: {
-    codigo: "75",
-    pista: "Época 07: Se ha formado una fisura temporal en el centro de la sala, justo en el estrecho espacio entre dos pantallas."
+    codigo: "15",
+    pista: "Fórmula 07: Un cristal quedó atrapado en el estrecho vacío entre dos espejos (monitores) que se tocan."
   },
   8: {
-    codigo: "20",
-    pista: "Época 08: Agáchate bajo la mesa de control del Guardián Principal (el escritorio). La pista te espera en la sombra."
+    codigo: "500",
+    pista: "Fórmula 08: Sumérgete bajo el altar principal del Maestro (el escritorio central). La pista está adherida abajo."
   },
   9: {
-    codigo: "10",
-    pista: "Época 09: Examina el portal físico que divide nuestra dimensión del pasillo. Busca en lo más alto de su marco."
+    codigo: "40",
+    pista: "Fórmula 09: Revisa el dintel superior del gran portal físico de entrada a nuestra cámara de alquimia."
   },
   10: {
-    codigo: "37",
-    pista: "Época 10: Un dispositivo de movimiento (mouse) ha quedado congelado en el tiempo. Búscalo cerca del escritorio."
+    codigo: "63",
+    pista: "Fórmula 10: Un roedor petrificado (mouse inactivo de repuesto) guarda la última piedra en la mesa principal."
   }
 };
 
