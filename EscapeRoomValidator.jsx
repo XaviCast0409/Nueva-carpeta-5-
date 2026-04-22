@@ -1,199 +1,179 @@
 import React, { useState, useEffect } from 'react';
 
-// ==========================================
-// CONFIGURACIÓN DE CÓDIGOS DE ESCAPE ROOM
-// Puedes cambiar estos valores fácilmente. 
-// Las claves representan el número de nivel.
-// ==========================================
-const LEVEL_CODES = {
-  1: "600",
-  2: "270",
-  3: "12",
-  4: "60",
-  5: "40",
-  6: "3",
-  7: "80",
-  8: "210",
-  9: "60",
-  10: "100"
+// Aquí están configuradas las 10 puertas con sus códigos y pistas (Nivel 6to Primaria)
+const PUERTAS_DATA = {
+  1: {
+    codigo: "35",
+    pista: "Misión 1: Busca debajo del tablero negro donde teclean los jugadores de la primera fila."
+  },
+  2: {
+    codigo: "58",
+    pista: "Misión 2: Tu siguiente objetivo se oculta a espaldas del monitor principal de la segunda escuadra."
+  },
+  3: {
+    codigo: "10",
+    pista: "Misión 3: Dirígete al gran cofre de metal donde descansan los equipos. Busca en el segundo nivel del armario."
+  },
+  4: {
+    codigo: "90",
+    pista: "Misión 4: Levanta la alfombra donde el ratón óptico resbala en la tercera fila."
+  },
+  5: {
+    codigo: "140",
+    pista: "Misión 5: El 'Jefe Final' tiene una silla rodante. Inspecciona la base de su trono."
+  },
+  6: {
+    codigo: "240",
+    pista: "Misión 6: La torre que procesa la información en la cuarta fila respira aire caliente. Busca junto a su ventilador."
+  },
+  7: {
+    codigo: "24",
+    pista: "Misión 7: Un ratón desconectado y olvidado en el escritorio central guarda el séptimo secreto."
+  },
+  8: {
+    codigo: "162",
+    pista: "Misión 8: En el punto medio de la sala, donde dos pantallas se miran de reojo, encontrarás la clave."
+  },
+  9: {
+    codigo: "36000",
+    pista: "Misión 9: Todo sistema tiene una entrada principal. Busca en lo más alto del marco de la puerta."
+  },
+  10: {
+    codigo: "20",
+    pista: "Misión 10: Sumérgete bajo la mesa de control del profesor, el último paquete de datos te espera ahí."
+  }
 };
 
-const TOTAL_LEVELS = Object.keys(LEVEL_CODES).length;
+export default function EscapeRoomTerminal() {
+  const [ordenPuertas, setOrdenPuertas] = useState([]);
+  const [indiceActual, setIndiceActual] = useState(0);
+  const [inputCodigo, setInputCodigo] = useState('');
+  const [mostrarPista, setMostrarPista] = useState(false);
+  const [mensajeError, setMensajeError] = useState(false);
+  const [juegoTerminado, setJuegoTerminado] = useState(false);
 
-const EscapeRoomValidator = () => {
-  const [level, setLevel] = useState(1);
-  const [inputValue, setInputValue] = useState("");
-  const [feedback, setFeedback] = useState({ message: "", type: "" });
-  const [gameWon, setGameWon] = useState(false);
-  const [isValidating, setIsValidating] = useState(false);
-
-  // Importar fuente VT323 de Google Fonts dinámicamente para el estilo retro
+  // Al cargar la app, desordena las 10 puertas aleatoriamente
   useEffect(() => {
-    const link = document.createElement("link");
-    link.href = "https://fonts.googleapis.com/css2?family=VT323&display=swap";
-    link.rel = "stylesheet";
-    document.head.appendChild(link);
-
-    // Limpieza al desmontar
-    return () => {
-      document.head.removeChild(link);
-    };
+    const puertas = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    for (let i = puertas.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [puertas[i], puertas[j]] = [puertas[j], puertas[i]];
+    }
+    setOrdenPuertas(puertas);
   }, []);
 
-  const handleValidation = (e) => {
-    if (e) e.preventDefault();
-    if (!inputValue.trim() || isValidating) return;
+  if (ordenPuertas.length === 0) return null;
 
-    setIsValidating(true);
-    setFeedback({ message: ">>> AUTENTICANDO CON EL SISTEMA...", type: "validating" });
-
-    // Simular retraso para hacer la validación más emocionante y dinámica
-    setTimeout(() => {
-      const currentCode = LEVEL_CODES[level];
-
-      // Normalizar inputs (ignorar mayúsculas, minúsculas y espacios en blanco)
-      const normalizedInput = inputValue.trim().toUpperCase().replace(/\s+/g, '');
-      const normalizedCode = String(currentCode).toUpperCase().replace(/\s+/g, '');
-
-      if (normalizedInput === normalizedCode) {
-        if (level === TOTAL_LEVELS) {
-          setFeedback({ message: "CÓDIGO ACEPTADO. DESBLOQUEANDO ACCESO FINAL...", type: "success" });
-          setTimeout(() => {
-            setGameWon(true);
-            setIsValidating(false);
-          }, 1500);
-        } else {
-          setFeedback({ message: `CÓDIGO ACEPTADO. PREPARANDO NIVEL ${level + 1}...`, type: "success" });
-          setTimeout(() => {
-            setLevel((prev) => prev + 1);
-            setInputValue("");
-            setFeedback({ message: "", type: "" });
-            setIsValidating(false);
-          }, 2000);
-        }
-      } else {
-        setFeedback({ message: "ACCESO DENEGADO - CÓDIGO INCORRECTO", type: "error" });
-        setInputValue("");
-        setTimeout(() => {
-          setFeedback({ message: "", type: "" });
-          setIsValidating(false);
-        }, 2000);
-      }
-    }, 1200); // 1.2 segundos de animación "validando"
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      handleValidation();
-    }
-  };
-
-  // PANTALLA DE VICTORIA (JEFE FINAL DERROTADO)
-  if (gameWon) {
+  // Pantalla de Victoria
+  if (juegoTerminado) {
     return (
-      <div
-        className="fixed inset-0 flex flex-col items-center justify-center bg-zinc-950 text-amber-400 p-4"
-        style={{ fontFamily: "'VT323', monospace" }}
-      >
-        <div className="text-center animate-pulse">
-          <h1 className="text-6xl md:text-8xl mb-8 tracking-widest drop-shadow-[0_0_15px_rgba(251,191,36,0.8)]">
-            ¡FELICIDADES!
-          </h1>
-          <h2 className="text-4xl md:text-6xl mb-12">
-            GANARON EL JUEGO
-          </h2>
-
-          {/* ASCII ART DEL TROFEO */}
-          <pre className="text-2xl md:text-3xl text-green-500 mb-8 leading-none drop-shadow-[0_0_10px_rgba(34,197,94,0.8)]">
-            {`
-       ___________
-      '._==_==_=_.'
-      .-\\:      /-.
-     | (|:.     |) |
-      '-|:.     |-'
-        \\::.    /
-         '::. .'
-           ) (
-         _.' '._
-        \`"""""""\`
-            `}
-          </pre>
-
-          <p className="text-3xl md:text-5xl text-cyan-400 animate-bounce drop-shadow-[0_0_10px_rgba(34,211,238,0.8)] mt-12">
-            [ SISTEMA DESBLOQUEADO ]
+      <div className="min-h-screen bg-black text-green-500 font-mono flex items-center justify-center p-6 selection:bg-green-900">
+        <div className="text-center animate-pulse border-4 border-green-500 p-8 md:p-12 shadow-[0_0_20px_rgba(34,197,94,0.5)]">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">¡FELICIDADES!</h1>
+          <p className="text-xl md:text-3xl uppercase tracking-widest">
+            Ganaron felicidades por ingresar a las puertas y escapar.
           </p>
+          <div className="mt-8 text-6xl">🔓</div>
         </div>
       </div>
     );
   }
 
-  // PANTALLA PRINCIPAL DEL JUEGO
-  return (
-    <div
-      className="min-h-screen bg-zinc-950 flex flex-col justify-center items-center p-4"
-      style={{ fontFamily: "'VT323', monospace" }}
-    >
-      {/* Contenedor Principal tipo Terminal Retro/Arcade */}
-      <div className="w-full max-w-2xl border-4 border-green-500 bg-black p-8 md:p-12 relative shadow-[0_0_25px_rgba(34,197,94,0.2)]">
+  const puertaActual = ordenPuertas[indiceActual];
+  const datosActuales = PUERTAS_DATA[puertaActual];
 
-        {/* Adorno superior simulando la barra de consola CRT */}
-        <div className="absolute top-0 left-0 w-full border-b-4 border-green-500 bg-green-950 flex px-2 py-1 space-x-2">
-          <div className="w-4 h-4 bg-green-500"></div>
-          <div className="w-4 h-4 border-2 border-green-500"></div>
-          <div className="w-4 h-4 border-2 border-green-500 mr-auto"></div>
-          <span className="text-green-500 text-xl leading-none pt-1">SYS.VER.10.x</span>
+  const validarCodigo = (e) => {
+    e.preventDefault();
+    if (inputCodigo.trim() === datosActuales.codigo) {
+      setMensajeError(false);
+      setInputCodigo('');
+      setMostrarPista(false);
+
+      if (indiceActual + 1 >= ordenPuertas.length) {
+        setJuegoTerminado(true);
+      } else {
+        setIndiceActual(indiceActual + 1);
+      }
+    } else {
+      setMensajeError(true);
+      setInputCodigo('');
+      setTimeout(() => setMensajeError(false), 2000);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-black text-green-400 font-mono flex flex-col items-center justify-center p-4 relative">
+
+      {/* Contenedor Principal */}
+      <div className="w-full max-w-md border-4 border-green-500 p-8 bg-gray-900 bg-opacity-50 shadow-[0_0_15px_rgba(34,197,94,0.3)]">
+
+        {/* Cabecera de Progreso */}
+        <div className="flex justify-between items-center mb-8 border-b-2 border-green-500 pb-4">
+          <span className="text-lg">PROGRESO: {indiceActual + 1}/10</span>
+          <span className="text-sm animate-pulse">SISTEMA ACTIVO</span>
         </div>
 
-        <div className="mt-8 text-center">
-          <h2 className="text-green-500 text-4xl md:text-5xl mb-4 uppercase tracking-widest drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]">
-            NIVEL {level} / {TOTAL_LEVELS}
-          </h2>
+        {/* Puerta Actual */}
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-5xl font-bold mb-2">PUERTA {puertaActual}</h2>
+          <p className="text-sm text-green-300">INGRESA EL CÓDIGO PARA AVANZAR</p>
+        </div>
 
-          {/* Zona de Feedback (Mensajes de error o éxito) */}
-          <div className="h-8 mb-8 flex items-center justify-center">
-            {feedback.message && (
-              <p className={`text-3xl md:text-4xl tracking-wider ${feedback.type === 'error'
-                  ? 'text-red-500 animate-[ping_0.5s_cubic-bezier(0,0,0.2,1)_3] drop-shadow-[0_0_10px_rgba(239,68,68,0.8)]'
-                  : feedback.type === 'validating'
-                    ? 'text-amber-400 animate-pulse drop-shadow-[0_0_10px_rgba(251,191,36,0.8)]'
-                    : 'text-green-400 animate-pulse drop-shadow-[0_0_10px_rgba(74,222,128,0.8)]'
-                }`}>
-                {feedback.message}
-              </p>
-            )}
-          </div>
+        {/* Formulario de Ingreso */}
+        <form onSubmit={validarCodigo} className="flex flex-col gap-4">
+          <input
+            type="text"
+            value={inputCodigo}
+            onChange={(e) => setInputCodigo(e.target.value)}
+            className="w-full bg-black border-2 border-green-500 text-green-400 text-center text-3xl p-4 focus:outline-none focus:border-green-300 focus:shadow-[0_0_10px_rgba(34,197,94,0.5)]"
+            placeholder="****"
+            autoFocus
+          />
 
-          <div className="flex flex-col space-y-8">
-            <input
-              type="text"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value.toUpperCase())}
-              onKeyDown={handleKeyDown}
-              placeholder="INGRESA EL CÓDIGO_"
-              className="w-full bg-black border-4 border-cyan-500 text-cyan-400 text-5xl md:text-7xl p-6 text-center uppercase focus:outline-none focus:border-amber-400 focus:text-amber-400 transition-colors placeholder-cyan-900 shadow-[inset_0_0_15px_rgba(6,182,212,0.2)] disabled:opacity-50"
-              autoFocus
-              disabled={isValidating || feedback.type === 'success'}
-            />
-
+          <div className="flex gap-4 mt-4">
             <button
-              onClick={handleValidation}
-              disabled={isValidating || feedback.type === 'success'}
-              className={`w-full uppercase bg-black border-4 text-4xl md:text-5xl p-4 transition-colors disabled:opacity-50 disabled:cursor-not-allowed tracking-widest ${isValidating
-                  ? 'border-amber-500 text-amber-500 animate-pulse'
-                  : 'border-green-500 text-green-500 hover:bg-green-500 hover:text-black active:bg-green-700 active:border-green-700'
-                }`}
+              type="button"
+              onClick={() => setMostrarPista(true)}
+              className="flex-1 bg-transparent border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black py-3 font-bold transition-colors text-lg"
             >
-              {isValidating ? 'VALIDANDO...' : 'VALIDAR'}
+              [ PISTA ]
+            </button>
+            <button
+              type="submit"
+              className="flex-1 bg-green-500 text-black hover:bg-green-400 py-3 font-bold transition-colors text-lg"
+            >
+              VALIDAR
             </button>
           </div>
+        </form>
 
-          <div className="mt-8 text-green-800 text-2xl animate-pulse text-left">
-            {">"} Esperando input del usuario... <span className="inline-block w-3 h-6 bg-green-500 animate-ping align-middle"></span>
+        {/* Mensaje de Error */}
+        {mensajeError && (
+          <div className="mt-6 text-red-500 text-center font-bold animate-bounce text-xl">
+            ERROR: ACCESO DENEGADO
+          </div>
+        )}
+      </div>
+
+      {/* Modal de Pista */}
+      {mostrarPista && (
+        <div className="absolute inset-0 bg-black bg-opacity-90 flex items-center justify-center p-4 z-50">
+          <div className="max-w-md w-full border-4 border-amber-500 bg-black p-6">
+            <h3 className="text-2xl text-amber-500 mb-4 font-bold text-center border-b-2 border-amber-500 pb-2">
+              UBICACIÓN DETECTADA
+            </h3>
+            <p className="text-amber-400 text-lg leading-relaxed mb-8 text-center">
+              "{datosActuales.pista}"
+            </p>
+            <button
+              onClick={() => setMostrarPista(false)}
+              className="w-full bg-amber-500 text-black py-3 font-bold hover:bg-amber-400 text-lg"
+            >
+              CERRAR Y BUSCAR
+            </button>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
-};
-
-export default EscapeRoomValidator;
+}
